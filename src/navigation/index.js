@@ -21,7 +21,7 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name=" "
         component={BookScreen}
       />
       <Stack.Screen
