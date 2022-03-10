@@ -5,8 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BookScreen from '../screens/BookScreen';
 import DetailScreen from '../screens/DetailScreen.js';
 
-import bookData from '../json/books.json';
-
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
@@ -28,7 +26,7 @@ const StackNavigator = () => {
         name="Detail"
         component={DetailScreen}
         options={({ route }) => ({
-          title: route.params.title,
+          title: "",
           headerStyle: {
             backgroundColor: '#fff',
           },

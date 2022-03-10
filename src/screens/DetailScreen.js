@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View, Image, Button, Linking } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, Linking, Pressable } from 'react-native';
 
 const DetailScreen = ({ route }) => {
   const { title, 
@@ -11,7 +11,7 @@ const DetailScreen = ({ route }) => {
     description
   } = route.params;
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor:'#fff'}}>
       <View style={styles.container}>
         <Image
           style={styles.image}
@@ -19,17 +19,18 @@ const DetailScreen = ({ route }) => {
             uri: image
           }}
         />
-        <Text style={styles.bodyText}>{title}</Text>
-        <Text>{author}</Text>
-        <Text>
-          <Text>{score}</Text>
-          /5.0
+        <Text style={[styles.h1, styles.title]}>{title}</Text>
+        <Text style={[styles.b1, styles.gray, styles.title]}>{author}</Text>
+        <Text style={[styles.b1, styles.gray, styles.rate]}>
+          <Text style={{color:'#000'}}>{score} </Text>
+          / 5.0
         </Text>
-        <Text>{description}</Text>
-        <Button 
+        <Text style={[styles.b1, styles.des]}>{description}</Text>
+        <Pressable
           onPress={() => Linking.openURL(url)}
-          title="BUY NOW FOR $"
-        />  
+          style={styles.bt}>
+            <Text style={[styles.btText]}>BUY NOW FOR ${price}</Text>
+        </Pressable>
       </View>
     </ScrollView>
   );
@@ -45,9 +46,59 @@ const styles = StyleSheet.create({
   image: {
     height: 300,
     width: 210,
+    marginTop: 8,
+    marginBottom: 26,
   },
-  bodyText:{
+  title:{
+    marginBottom: 8,
+  },
+  rate:{
+    marginBottom: 16,
+  },
+  des:{
+    lineHeight: 24,
+    textAlign: 'center',
+    marginBottom: 28,
+  },
+  bt: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    backgroundColor: '#6200EE',
+  },
+  btText:{
     fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '500',
+    color: 'white',
+  },
+  h1:{
+    fontSize: 24,
+    lineHeight: 28,
+    fontWeight: '500',
+    letterSpacing: 0.3,
+  },
+  h2:{
+    fontSize: 16,
+    lineHeight: 18,
+    fontWeight: '500',
+    letterSpacing: 0.012,
+  },
+  b1:{
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '400',
+    letterSpacing: 0.012,
+  },
+  b2:{
+    fontSize: 12,
+    lineHeight: 14,
+    fontWeight: '400',
+  },
+  gray:{
+    color: '#666666',
   }
 });
 
