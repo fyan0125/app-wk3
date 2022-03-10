@@ -1,9 +1,9 @@
 import React from "react";
 import { FlatList, View, StyleSheet, Text } from "react-native";
-import Popular from "./PopularBooks";
+import Newest from "./NewestBook";
 
 const NewestList = ({ list, navigation }) => {
-  const renderItem = ({ item }) => <Popular book={item} navigation={navigation} />;
+  const renderItem = ({ item }) => <Newest book={item} navigation={navigation} />;
   return (
     <View>
       <Text style={styles.h1}>Newest</Text>
@@ -13,20 +13,24 @@ const NewestList = ({ list, navigation }) => {
         keyExtractor={item => item.title}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
+        style={styles.content}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    paddingVertical: 8,
+  content:{
+    paddingLeft: 20,
   },
   h1:{
     fontSize: 24,
     lineHeight: 28,
     fontWeight: '500',
     letterSpacing: 0.3,
+    marginLeft: 20,
+    marginTop: 16,
+    marginBottom: 16,
   },
   h2:{
     fontSize: 16,

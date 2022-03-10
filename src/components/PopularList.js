@@ -13,20 +13,24 @@ const PopularList = ({ list, navigation }) => {
         keyExtractor={item => item.title}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
+        style={styles.content}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    paddingVertical: 8,
-  },
   h1:{
     fontSize: 24,
     lineHeight: 28,
     fontWeight: '500',
     letterSpacing: 0.3,
+    marginLeft: 20,
+    marginTop: 8,
+    marginBottom: 16,
+  },
+  content:{
+    paddingLeft: 20,
   },
   h2:{
     fontSize: 16,
