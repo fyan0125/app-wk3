@@ -1,14 +1,16 @@
 import React from "react";
 import { FlatList } from "react-native";
-import BookDetail from "./BookDetail";
+import Popular from "./PopularBooks";
 
 const BookList = ({ list, navigation }) => {
-  const renderItem = ({ item }) => <BookDetail book={item} navigation={navigation} />;
+  const renderItem = ({ item }) => <Popular book={item} navigation={navigation} />;
   return (
     <FlatList
       data={list}
       renderItem={renderItem}
       keyExtractor={item => item.title}
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
     />    
   );  
 }

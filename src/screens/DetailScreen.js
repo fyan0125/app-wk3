@@ -1,76 +1,104 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View, Image, Button, Linking } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, Linking, Pressable } from 'react-native';
 
 const DetailScreen = ({ route }) => {
   const { title, 
     author,
     price,
+    score,
     url,
     image,
     description
   } = route.params;
   return (
-    <ScrollView>
-      <View>
+    <ScrollView style={{backgroundColor:'#fff'}}>
+      <View style={styles.container}>
         <Image
-          style={styles.imageStyle}
+          style={styles.image}
           source={{
             uri: image
           }}
         />
-      </View>
-      <View style={styles.cardContainerStyle}>
-        <Text style={styles.discountStyle} >Discount Now!</Text>
-        <Text style={styles.priceStyle} >Price: ${price}</Text>
-        <Button 
+        <Text style={[styles.h1, styles.title]}>{title}</Text>
+        <Text style={[styles.b1, styles.gray, styles.title]}>{author}</Text>
+        <Text style={[styles.b1, styles.gray, styles.rate]}>
+          <Text style={{color:'#000'}}>{score} </Text>
+          / 5.0
+        </Text>
+        <Text style={[styles.b1, styles.des]}>{description}</Text>
+        <Pressable
           onPress={() => Linking.openURL(url)}
-          title="Buy Now !"
-        />  
-      </View>
-      <View style={styles.cardContainerStyle}>
-          <Text>
-            <Text style={{fontWeight:'bold'}}>Author: </Text>
-            {author}
-          </Text>
-          <Text>            
-            <Text style={{fontWeight:'bold'}}>Title: </Text>
-            {title}
-          </Text>
-          <Text style={{marginTop: 15, fontWeight: 'bold'}}>Descriptions:</Text>
-          <Text style={{lineHeight: 18}}>{'\t'}{description}</Text>
+          style={styles.bt}>
+            <Text style={[styles.btText]}>BUY NOW FOR ${price}</Text>
+        </Pressable>
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },  
-  imageStyle: {
-    height: 200,
-    width: null
   },
-  cardContainerStyle: {
-    backgroundColor: '#fff',
-    padding: 10,
-    marginHorizontal: 10,
-    marginTop: 10
+  image: {
+    height: 300,
+    width: 210,
+    marginTop: 8,
+    marginBottom: 26,
   },
-  discountStyle: {
-    color: '#6099E4',
+  title:{
+    marginBottom: 8,
+  },
+  rate:{
+    marginBottom: 16,
+  },
+  des:{
+    lineHeight: 24,
     textAlign: 'center',
-    fontSize: 25,
-    fontWeight: 'bold'
+    marginBottom: 28,
   },
-  priceStyle: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 40,
-    marginVertical: 20,
+  bt: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    backgroundColor: '#6200EE',
+  },
+  btText:{
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '500',
+    color: 'white',
+  },
+  h1:{
+    fontSize: 24,
+    lineHeight: 28,
+    fontWeight: '500',
+    letterSpacing: 0.3,
+  },
+  h2:{
+    fontSize: 16,
+    lineHeight: 18,
+    fontWeight: '500',
+    letterSpacing: 0.012,
+  },
+  b1:{
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '400',
+    letterSpacing: 0.012,
+  },
+  b2:{
+    fontSize: 12,
+    lineHeight: 14,
+    fontWeight: '400',
+  },
+  gray:{
+    color: '#666666',
   }
 });
 
