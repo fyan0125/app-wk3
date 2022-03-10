@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 
-const PopularBooks = ({ book, navigation }) => {
+const NewestBooks = ({ book, navigation }) => {
   return (
       <View style={styles.container}>
         <View>
@@ -18,6 +18,7 @@ const PopularBooks = ({ book, navigation }) => {
         </View>   
         <View>
           <View>
+            <View style={styles.rate}></View>
             <Text style={styles.h2}>{book.title}</Text>
             <Text style={[styles.b2, styles.gray]}>{book.author}</Text>
           </View>
@@ -33,6 +34,9 @@ const styles = StyleSheet.create({
     height: 200,
     width: 140
   },
+  rate:{
+    marginTop: 16,
+  },
   h1:{
     fontSize: 24,
     lineHeight: 28,
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     fontWeight: '500',
     letterSpacing: 0.012,
-    marginTop: 16,
+    marginTop: 8,
     marginBottom: 8,
   },
   b1:{
@@ -63,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PopularBooks;
+export default NewestBooks;
