@@ -1,5 +1,5 @@
 import React from "react";
-import { View} from "react-native";
+import { View } from "react-native";
 import PopularList from "../components/PopularList";
 import Newest from "../components/NewestList";
 import bookData from "../json/books.json";

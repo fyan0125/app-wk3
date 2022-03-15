@@ -4,41 +4,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import BookScreen from '../screens/BookScreen';
 import DetailScreen from '../screens/DetailScreen.js';
-
-const Stack = createNativeStackNavigator();
+import StackNavigator from './StackNav';
+import TabNavigator from './TabNav';
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      <TabNavigator />
     </NavigationContainer>
   );
 }
 
-const StackNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name=" "
-        component={BookScreen}
-      />
-      <Stack.Screen
-        name="Detail"
-        component={DetailScreen}
-        options={({ route }) => ({
-          title: "",
-          headerStyle: {
-            backgroundColor: '#fff',
-          },
-          headerTintColor: '#000',
-          headerTitleStyle: {
-            fontWeight: '400',
-            fontSize: 20
-          },
-        })}
-      />
-    </Stack.Navigator>
-  );
-}
+
 
 export default Navigation;
