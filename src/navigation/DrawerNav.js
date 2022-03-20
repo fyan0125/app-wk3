@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/drawer';
 
 import BookScreen from '../screens/BookScreen';
+import StackNav from './StackNav';
 
 const Drawer = createDrawerNavigator();
 
@@ -36,6 +37,7 @@ const DrawerNavigator = ({navigation}) => {
       <Drawer.Navigator
         screenOptions={{
           drawerActiveTintColor: '#000',
+          headerShown: false,
         }}
         initialRouteName="Home"
         drawerContent={props => <CustomDrawerContent {...props} />}
@@ -50,7 +52,6 @@ const DrawerNavigator = ({navigation}) => {
                 source={{uri: 'https://raw.githubusercontent.com/fyan0125/app-wk3/main/assets/icon_home.png'}}
               />
             ),
-            headerShown: false,
           }}
         />
         <Drawer.Screen 
@@ -63,7 +64,6 @@ const DrawerNavigator = ({navigation}) => {
                 source={{uri: 'https://raw.githubusercontent.com/fyan0125/app-wk3/main/assets/icon_nav_bookmark.png'}}
               />
             ),
-            headerShown: false,
           }}
         />
         <Drawer.Screen 
@@ -76,7 +76,6 @@ const DrawerNavigator = ({navigation}) => {
                 source={{uri: 'https://raw.githubusercontent.com/fyan0125/app-wk3/main/assets/icon_mybook.png'}}
               />
             ),
-            headerShown: false,
           }}
         />
         <Drawer.Screen 
@@ -89,7 +88,6 @@ const DrawerNavigator = ({navigation}) => {
                 source={{uri: 'https://raw.githubusercontent.com/fyan0125/app-wk3/main/assets/icon_account.png'}}
               />
             ),
-            headerShown: false,
           }}
         />
         <Drawer.Screen 
@@ -102,7 +100,6 @@ const DrawerNavigator = ({navigation}) => {
                 source={{uri: 'https://raw.githubusercontent.com/fyan0125/app-wk3/main/assets/icon_home.png'}}
               />
             ),
-            headerShown: false,
           }}
         />
       </Drawer.Navigator>

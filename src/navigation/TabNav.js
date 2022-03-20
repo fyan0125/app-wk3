@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import StackNav from './StackNav';
+import DrawerNav from './DrawerNav';
 
 const Tab = createBottomTabNavigator();
 

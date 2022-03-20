@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     textAlign: 'center',
     marginBottom: 28,
+    marginHorizontal: 20,
   },
   bt: {
     alignItems: 'center',
