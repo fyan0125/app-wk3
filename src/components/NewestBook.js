@@ -19,21 +19,11 @@ const NewestBooks = ({ book, navigation }) => {
         <View>
           <View>
             <View style={styles.rate}>
-            {
-              book.score  === "4.0"
-              ?<Image
-                style={styles.rateImg}
-                source={{
-                  uri: 'https://i.pinimg.com/originals/8d/5a/06/8d5a06e06c6d6f0c725b961fcedc1cb2.jpg'
-                }}
-                />
-              :<Image
-                style={styles.rateImg}
-                source={{
-                  uri: 'https://i.pinimg.com/originals/ff/14/83/ff1483341a2080c41259014e30a004e2.jpg'
-                }}
-            />
-            }
+              {
+                book.score  === "4.0"
+              ?<Image style={styles.rateImg} source={{uri: 'https://i.pinimg.com/originals/8d/5a/06/8d5a06e06c6d6f0c725b961fcedc1cb2.jpg'}}/>
+              :<Image style={styles.rateImg} source={{uri: 'https://i.pinimg.com/originals/ff/14/83/ff1483341a2080c41259014e30a004e2.jpg'}}/>
+              }
             </View>
             <Text style={styles.h2}>{book.title}</Text>
             <Text style={[styles.b2, styles.gray]}>{book.author}</Text>
@@ -55,7 +45,7 @@ const styles = StyleSheet.create({
   },
   rateImg:{
     width: 86,
-    height: 14,
+    height:14,
   },
   h1:{
     fontSize: 24,

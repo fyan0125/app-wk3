@@ -22,7 +22,7 @@ const DetailScreen = ({ route }) => {
             ?<Image style={styles.rateImg} source={{uri: 'https://i.pinimg.com/originals/8d/5a/06/8d5a06e06c6d6f0c725b961fcedc1cb2.jpg'}}/>
             :<Image style={styles.rateImg} source={{uri: 'https://i.pinimg.com/originals/ff/14/83/ff1483341a2080c41259014e30a004e2.jpg'}}/>
           }
-          <Text style={{color:'#000'}}>{score}</Text>
+          <Text style={{color:'#000'}}>  {score} </Text>
           / 5.0
         </Text>
         <Text style={[styles.b1, styles.des]}>{description}</Text>
@@ -55,6 +55,8 @@ const styles = StyleSheet.create({
   },
   rate:{
     marginBottom: 16,
+    width: 147,
+    justifyContent: 'space-between',
   },
   rateImg:{
     width: 86,
