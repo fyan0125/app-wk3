@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 4,
     backgroundColor: '#6200EE',
+    marginBottom: 60,
   },
   btText:{
     fontSize: 14,

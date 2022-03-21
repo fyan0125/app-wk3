@@ -8,6 +8,8 @@ import {
 
 import BookScreen from '../screens/BookScreen';
 import StackNav from './StackNav';
+import WishList from '../screens/WishList';
+import MyBooks from '../screens/MyBooks';
 
 const Drawer = createDrawerNavigator();
 
@@ -44,7 +46,7 @@ const DrawerNavigator = ({navigation}) => {
       >
         <Drawer.Screen
           name="Home"
-          component={BookScreen}
+          component={StackNav}
           options={{
             drawerIcon: () => (
               <Image 
@@ -56,7 +58,7 @@ const DrawerNavigator = ({navigation}) => {
         />
         <Drawer.Screen 
           name="WishList" 
-          component={BookScreen} 
+          component={WishList} 
           options={{
             drawerIcon: () => (
               <Image 
@@ -68,7 +70,7 @@ const DrawerNavigator = ({navigation}) => {
         />
         <Drawer.Screen 
           name="My books" 
-          component={BookScreen} 
+          component={MyBooks} 
           options={{
             drawerIcon: () => (
               <Image 

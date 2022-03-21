@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import StackNav from './StackNav';
 import DrawerNav from './DrawerNav';
+import BookScreen from '../screens/BookScreen';
+import WishList from '../screens/WishList';
+import MyBooks from '../screens/MyBooks';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +20,7 @@ const TabNavigator = () => {
         >
             <Tab.Screen 
                 name="Home" 
-                component={StackNav}
+                component={DrawerNav}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         focused
@@ -35,7 +38,7 @@ const TabNavigator = () => {
             />
             <Tab.Screen 
                 name="WishList" 
-                component={StackNav} 
+                component={WishList} 
                 options={{
                     tabBarIcon: ({ focused }) => (
                         focused
@@ -53,18 +56,18 @@ const TabNavigator = () => {
             />
             <Tab.Screen 
                 name="My books" 
-                component={StackNav} 
+                component={MyBooks} 
                 options={{
                     tabBarIcon: ({ focused }) => (
                         focused
                         ?<Image 
                         style={styles.bt}
                         source={{uri: 'https://i.pinimg.com/originals/22/a9/0b/22a90b27fa627114f8cc7634e2bcf606.jpg'}}
-                      />
+                        />
                         :<Image 
                         style={styles.bt}
                         source={{uri: 'https://i.pinimg.com/originals/41/cd/8f/41cd8f16d32e2f186ae0bc80890b25f7.jpg'}}
-                      />
+                        />
                     ),
                     headerShown: false,
                 }}

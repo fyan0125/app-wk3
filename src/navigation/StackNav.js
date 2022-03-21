@@ -5,6 +5,7 @@ import { DrawerActions } from '@react-navigation/native';
 
 import DetailScreen from '../screens/DetailScreen.js';
 import DrawerNav from './DrawerNav';
+import BookScreen from '../screens/BookScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ const StackNavigator = ({ navigation: { goBack }, navigation, props }) => {
 
   const openDrawer = () => {
     navigation.dispatch(DrawerActions.openDrawer())
-    navigation.setOptions({});
+    navigation.setOptions({headerShown: false,});
   };
 
     return (
@@ -27,12 +28,11 @@ const StackNavigator = ({ navigation: { goBack }, navigation, props }) => {
             elevation: 0,
             shadowOpacity: 0
           },
-          
         }}
       >
         <Stack.Screen
           name=" "
-          component={DrawerNav}
+          component={BookScreen}
           options={{
             headerLeft: () => (
               <TouchableOpacity onPress={openDrawer}>
